@@ -1,0 +1,139 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: whitesmoke;
+  color: black;
+}
+
+nav {
+  display: flex;
+  gap: 4%;
+  padding: 2% 5%;
+  background-color: firebrick;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Underlines navigation links when the mouse hovers over them */
+nav a:hover {
+  text-decoration: underline;
+}
+
+main {
+  padding: 3% 5%;
+}
+
+h1 {
+  color: firebrick;
+  font-size: 32px;
+}
+
+.search-form {
+  display: flex;
+  margin-top: 3%;
+  margin-bottom: 4%;
+}
+
+.search-form input {
+  width: 60%;
+  padding: 1.5%;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.search-form button {
+  padding: 1.5% 3%;
+  background-color: firebrick;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  /* changes the cursor to a pointer when we hover over the search button to make it more intuitive for the user*/
+  cursor: pointer;
+}
+
+/* Changes the button color and makes it darker when the mouse hovers over it */
+.search-form button:hover {
+  background-color: darkred;
+}
+
+/* Arranges artwork cards into three columns and adds spaces in between columns */
+.artwork-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 3%;
+  row-gap: 25px;
+  margin-top: 3%;
+  margin-bottom: 5%;
+}
+
+/* Styles each artwork card. */
+.artwork-card {
+  background-color: white;
+  border: 1px solid lightgray;
+  border-radius: 8px;
+}
+
+/* Creates a consistent area for each artwork image. */
+.artwork-image-container {
+  width: 100%;
+  height: 250px;
+  background-color: lightgray;
+}
+
+.artwork-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.artwork-placeholder {
+  width: 100%;
+  height: 100%;
+  background-color: lightgray;
+  color: dimgray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.artwork-info {
+  padding: 5%;
+}
+
+.artwork-info h2 {
+  color: firebrick;
+  font-size: 20px;
+  margin-top: 0;
+}
+
+.artwork-info p {
+  color: dimgray;
+  font-size: 16px;
+}
+
+/* Displays two artwork cards per row on medium screens. */
+@media (max-width: 1000px) {
+  .artwork-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .artwork-grid {
+    /*one card per column for smaller screens*/
+    grid-template-columns: 1fr;
+    row-gap: 20px;
+  }
+
+  .search-form input {
+    width: 65%;
+  }
+}
